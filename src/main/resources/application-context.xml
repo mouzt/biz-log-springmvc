@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:bizlog="http://www.springframework.org/schema/bizlog"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/bizlog http://www.springframework.org/schema/bizlog.xsd">
+    <!-- 自动扫描该包下的 Bean 并装载 -->
+    <context:component-scan base-package="org.mzt.bizlog.springmvc"/>
+
+    <bean id="orderBean" class="org.mzt.bizlog.springmvc.OrderBean"/>
+    <bizlog:log-record tenant="mzt222t"/>
+
+
+<!--    <bean class="org.springframework.context.annotation.AutoProxyRegistrar" name="autoProxyRegistrar"/>-->
+
+<!--    <tx:annotation-driven/>-->
+
+
+<!--    <bean class="com.mzt.logapi.service.impl.DefaultOperatorGetServiceImpl" name="operatorGetService">-->
+<!--    </bean>-->
+
+<!--    <bean class="com.mzt.logapi.service.impl.DefaultParseFunction" name="parseFunction">-->
+<!--    </bean>-->
+
+<!--    <bean class="com.mzt.logapi.service.impl.ParseFunctionFactory" name="parseFunctionFactory">-->
+<!--       <constructor-arg name="parseFunctions">-->
+<!--           <list>-->
+<!--               <ref bean="parseFunction"/>-->
+<!--           </list>-->
+<!--       </constructor-arg>-->
+<!--    </bean>-->
+
+<!--    <bean class="com.mzt.logapi.service.impl.DefaultFunctionServiceImpl" name="functionService">-->
+<!--        <constructor-arg name="parseFunctionFactory" ref="parseFunctionFactory"/>-->
+<!--    </bean>-->
+
+
+<!--    <bean class="com.mzt.logapi.starter.support.parse.LogFunctionParser" name="logFunctionParser">-->
+<!--        <constructor-arg name="functionService" ref="functionService"/>-->
+<!--    </bean>-->
+
+
+<!--    <bean class="com.mzt.logapi.service.impl.DiffParseFunction" name="diffParseFunction">-->
+
+<!--    </bean>-->
+
+<!--    <bean class="com.mzt.logapi.starter.configuration.LogRecordProperties" name="logRecordProperties">-->
+<!--    </bean>-->
+
+
+<!--    <bean class="com.mzt.logapi.service.impl.DefaultLogRecordServiceImpl" name="logRecordService">-->
+<!--    </bean>-->
+
+<!--    <bean class="com.mzt.logapi.starter.diff.DefaultDiffItemsToLogContentService" name="diffItemsToLogContentService">-->
+<!--        <constructor-arg name="functionService" ref="functionService"/>-->
+<!--        <constructor-arg name="logRecordProperties" ref="logRecordProperties"/>-->
+<!--    </bean>-->
+
+
+<!--    <bean class="com.mzt.logapi.starter.support.aop.LogRecordInterceptor" name="logRecordInterceptor">-->
+<!--        <property name="logRecordOperationSource" ref="logRecordOperationSource"/>-->
+<!--        <property name="logFunctionParser" ref="logFunctionParser"/>-->
+<!--        <property name="diffParseFunction" ref="diffParseFunction"/>-->
+<!--        <property name="tenant" value="mzt.springmvc"/>-->
+<!--        <property name="logRecordService" ref="logRecordService"/>-->
+<!--    </bean>-->
+
+
+<!--    <bean class="com.mzt.logapi.starter.support.aop.BeanFactoryLogRecordAdvisor" name="logRecordAdvisor">-->
+<!--        <property name="logRecordOperationSource" ref="logRecordOperationSource"/>-->
+<!--        <property name="advice" ref="logRecordInterceptor"/>-->
+<!--    </bean>-->
+
+
+</beans>
